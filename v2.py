@@ -8,7 +8,7 @@ print("\n\nAll Imports Success\n")
 logger = logging.getLogger();logger.setLevel(logging.CRITICAL);print("\nLogging Enabled!")
 
 class settings:
-    token = "NjA4MDA1NTI2MTg1MzEyMjY2.XUtC3g.V8Tl_Ngh0juwmkBpZMxGyNOOf7A"
+    token = "NjA4MDA1NTI2MTg1MzEyMjY2.XUtC3g.V8Tl_Ngh0juwmkBpZMxGyNOOf7B" #### <<<<<<<< YOUR TOKEN HERE
     
 client = discord.Client()
 chatbot = ChatBot("Temper")
