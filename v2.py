@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-import logging;from chatterbot import ChatBot;from chatterbot.trainers import ListTrainer;import discord, os, requests, nmap, time, socket, subprocess, sys, datetime, psutil, random, platform;from random import randint;from subprocess import PIPE, run;from io import StringIO
-print("\n\nAll Imports Success\n")
+import logging;from chatterbot import ChatBot;from chatterbot.trainers import ListTrainer;import discord, os, requests, nmap, time, socket, subprocess, sys, datetime, psutil, random, platform;from random import randint;from subprocess import PIPE, run;from io import StringIO;print("\n\nAll Imports Success\n")
 #logger = logging.getLogger();logger.setLevel(logging.CRITICAL);print("\nLogging Enabled!")
 class settings:
     token = "NjA4MDA1NTI2MTg1MzEyMjY2.XUyABA.hE4LRoN0CCpG5xfj6X5jc0S0gfE"
