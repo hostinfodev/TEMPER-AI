@@ -78,18 +78,10 @@ async def on_message(message):
     
     if message.content.startswith('-v') or message.content.startswith('version') or message.content.startswith('dev'):
         await message.delete()
-        dialog_size1 = str(os.path.getsize("Dialog.dat"))
-        sentence_size1 = str(os.path.getsize("sentence_tokenizer.pickle"))
-        db_size1 = str(os.path.getsize("db.sqlite3"))
-        host1 = socket.gethostname()
-        dt1 = datetime.datetime.now()
-        dts1 = f"{dt1}"
-        arch1 = str(platform.machine())
-        plat1 = str(platform.platform())
-        ver1 = str(platform.version())
-        cpu1 = str(platform.processor())
-        cpu_use1 = str(psutil.cpu_percent())
-        mem1 = str(psutil.virtual_memory())
+        dialog_size1 = str(os.path.getsize("Dialog.dat"));sentence_size1 = str(os.path.getsize("sentence_tokenizer.pickle"))
+        db_size1 = str(os.path.getsize("db.sqlite3"));host1 = socket.gethostname();dt1 = datetime.datetime.now();dts1 = f"{dt1}"
+        arch1 = str(platform.machine());plat1 = str(platform.platform());ver1 = str(platform.version())
+        cpu1 = str(platform.processor());cpu_use1 = str(psutil.cpu_percent());mem1 = str(psutil.virtual_memory())
         version1 = str(f"""
     __**Info/Stats**__
 
@@ -122,13 +114,11 @@ async def on_message(message):
     ```
     """)
         await message.channel.send(version1) 
-
     if message.content:
         parsed = message.content.replace('^', '').replace('\\', '').replace("*",'').replace("#", '').replace("<", '').replace(">", '').replace("@",'').replace("ツ",'').replace("0",'').replace("1",'').replace("2",'').replace("3",'').replace("4",'').replace("5",'').replace("6",'').replace("7",'').replace("8",'').replace("9",'')#pruning/parsing our input
         try:
             a = open("dialog.dat", "a", encoding="utf8") #Aknowledge and save to db.
-            a.write(f'{parsed}\n')
-            a.close()
+            a.write(f'{parsed}\n');a.close()
         except Exception as f1:
             print("First write to mem. failed!\n"+str(f1))
             await message.channel.send("Sorry, I've lost our conversation :(\n```yaml\nError Flag 1:\n"+str(f1)+'\n```')
@@ -144,13 +134,12 @@ async def on_message(message):
                 await message.channel.send("Sorry, I've failed to come up with a response :(\n```yaml\nError Flag 2:\n"+str(f2)+'\n```')
                 bError = True
                 pass
-
-        #if bError == False:
-            #dice = randint(1,2) # Randomize reccollection of our own response   - 2nd write to mem.
-            #if dice == 2:
-                #b = open("dialog.dat","a", encoding="utf8")
-                #b.write(f'{response}\n')
-                #b.close()
+        if bError == False:
+            dice = randint(1,2) # Randomize reccollection of our own response   - 2nd write to mem.
+            if dice == 2:
+                b = open("dialog.dat","a", encoding="utf8")
+                b.write(f'{response}\n')
+                b.close()
 
         elif bError == True:
             pass       
@@ -160,12 +149,5 @@ async def on_message(message):
 try:
     client.run(settings.token)
 except Exception as eee:
-    print(str(eee))
+    eee = str(eee);b1 = open("Discord_Client_Error_Log.log","+w", encoding="utf8");b1.write(f'{eee}\n');b1.close();print(str(eee))
     pass
-
-
-
-
-#
-        #pruned = message.content.split(' ', 1)[1]
-        #inp = str(pruned)
