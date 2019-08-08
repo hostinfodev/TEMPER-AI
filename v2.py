@@ -35,7 +35,8 @@ Local Time: {dts}
 
 ChatBot: Initializing""")
 trainer = ListTrainer(chatbot);print('\nSuccess\nLoading Training Data')
-trainer.train([line.rstrip('\n') for line in open("dialog.dat", "r", encoding="utf8")]);print('\nSuccess\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
+trainer.train([line.rstrip('\n') for line in open("dialog.dat", "r", encoding="utf8")])
+print('\nSuccess\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
 @client.event
 async def on_ready():
     print('-\n[Ok] - Succesfully logged in as {0.user}'.format(client));print(s.version)
@@ -47,7 +48,11 @@ async def on_message(message):
     bError = False
     
     if message.content.startswith('-v') or message.content.startswith('version') or message.content.startswith('dev'):
-        await message.delete();dialog_size1 = str(os.path.getsize("Dialog.dat"));sentence_size1 = str(os.path.getsize("sentence_tokenizer.pickle"));db_size1 = str(os.path.getsize("db.sqlite3"));host1 = socket.gethostname();dt1 = datetime.datetime.now();dts1 = f"{dt1}";arch1 = str(platform.machine());plat1 = str(platform.platform());ver1 = str(platform.version());cpu1 = str(platform.processor());cpu_use1 = str(psutil.cpu_percent());mem1 = str(psutil.virtual_memory())
+        await message.delete();dialog_size1 = str(os.path.getsize("Dialog.dat"))
+        sentence_size1 = str(os.path.getsize("sentence_tokenizer.pickle"))
+        db_size1 = str(os.path.getsize("db.sqlite3"));host1 = socket.gethostname();ver1 = str(platform.version())
+        dt1 = datetime.datetime.now();dts1 = f"{dt1}";arch1 = str(platform.machine());plat1 = str(platform.platform())
+        cpu1 = str(platform.processor());cpu_use1 = str(psutil.cpu_percent());mem1 = str(psutil.virtual_memory())
         version1 = str(f"""
     __**Info/Stats**__
 
