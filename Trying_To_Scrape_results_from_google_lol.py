@@ -25,12 +25,6 @@ class lists:
      'Chrome/63.0.3239.108 '
      'Safari/537.36'),  # chrome
     ]
-inp=str(input("Enter a search!:"))    
-user_agent0 = random.choice(lists.useragents)
-headers0 = {'User-Agent' : user_agent0}
-inp = inp.replace(" ", "+")
-print(inp)
-url0=str(f"https://https://www.google.com/search?q={inp}")
-print(url0)
-t1 = requests.get(url0,headers=headers0)
-print(t1.text)
+inp=str(input("Enter a search!:"));user_agent0 = random.choice(lists.useragents);headers0 = {'User-Agent' : user_agent0}
+inp = inp.replace(" ", "+");url0=str(f"https://www.google.com/search?q={inp}");print(f"Url: {url0}")
+t1 = requests.get(url0,headers=headers0);print(t1.text)
