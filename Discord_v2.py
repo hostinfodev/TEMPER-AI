@@ -1,4 +1,14 @@
 #!/usr/bin/python3
+#                                       TEMPER-AI Discord Chatbot By CyberCreature Security
+#                                     Learning from Discord interactions, real-time, <3 Enjoy!
+#
+#
+#
+#
+#
+#
+#
+
 import logging;from chatterbot import ChatBot;from chatterbot.trainers import ListTrainer;import discord, os, requests, nmap, time, socket, subprocess, sys, datetime, psutil, random, platform;from random import randint;from subprocess import PIPE, run;from io import StringIO;print("\n\nAll Imports Success\n")
 #logger = logging.getLogger();logger.setLevel(logging.CRITICAL);print("\nLogging Enabled!")
 class settings:
